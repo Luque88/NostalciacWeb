@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1-apr-2019, 9.00.42
+    Author     : tss
+*/
+.campo label:first-child{
+    display:inline-block;
+    width: 10em;
+    vertical-align: top;
+}
+
+.campo{
+    width: 35em;
+    margin:auto;
+}
+
+input:focus {
+    outline:solid 1px red;
+}
+
+input[type="text"], textarea, select, input [type="text"]{
+    width:20em;
+    border:solid 1px blue;
+}
+
+textarea {
+    height:4em;
+}
+
+input[type=button], input[type=submit], input[type=reset]{
+    width: 15em;
+    display:block;
+    margin:auto;
+}
+
+@media (orientation: portrait)
+{
+    .campo{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .campo label:nth-child(1) {
+        width:100%;
+        display:block;
+        text-align: center;
+    }
+}
