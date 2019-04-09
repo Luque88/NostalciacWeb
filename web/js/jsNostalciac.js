@@ -36,7 +36,7 @@ document.querySelector("#b_post").onclick = function () {
 
 };
 
-console.log("pagina jsNostalciac")
+console.log("pagina jsNostalciac.js")
 
 
 

@@ -123,7 +123,7 @@ document.querySelector("#username").onchange = function (e) {
     let obj = creaOggettoValori();
     alert(JSON.stringify(obj));
 /*    
-    fetch('http://localhost:8080/nostalciac/resources/checkUsername', {
+    fetch('http://localhost:8080/nostalciac2.0/resources/checkUsername', {
         method: 'post',
         
         headers: {

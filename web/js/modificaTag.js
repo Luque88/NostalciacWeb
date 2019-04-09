@@ -7,16 +7,13 @@
 var jsonTags;
 
 function caricaTag() {
-    
-    
     fetch('http://localhost:8080/nostalciac2.0/resources/tags')
             .then(response => {
                 console.log("response...", response);
                 return response.json();
             })
             .then(json => {
-                document.querySelector("#contenitore").innerHTML = "";
-                creaTabellaDaJson(json, "id,tag,tipo", "tab1", "tabella", "#contenitore");
+                creaTabellaDaJson(json, "", "tabTags", "tabella", "#contenitore");
                 jsonTags = json;
             })
             .then(e => caricaSelect())
@@ -24,15 +21,13 @@ function caricaTag() {
                 alert("err" + x);
                 console.log("err", x);
             });
-
 }
 
 caricaTag();
 
 function caricaSelect() {
-    //
     document.querySelector("#sel_tags").innerHTML = "";
-    
+
     let opt = document.createElement("option");
     opt.innerHTML = "Scegli il record da modificare";
     opt.value = -1;
@@ -46,19 +41,10 @@ function caricaSelect() {
         opt.setAttribute("tipo", tag.tipo);
         opt.setAttribute("idTag", tag.id); //meglio che id
         document.querySelector("#sel_tags").append(opt);
-
     });
-
-
 }
 
-
-
-//window.onload = function () {
-
-
 document.querySelector("#sel_tags").onchange = function (e) {
-
     let indiceOpzione = document.querySelector("#sel_tags").selectedIndex;
     let opzioneSelezionata = document.querySelector("#sel_tags").options[indiceOpzione];
 
@@ -67,18 +53,16 @@ document.querySelector("#sel_tags").onchange = function (e) {
     let tipo = jsonTags[value].tipo;
     let tag = jsonTags[value].tag;
 
-    //alternativa      
-    //let idTag = opzioneSelezionata.getAttribute("idTag")
-    //let tipo = opzioneSelezionata.getAttribute("tipo")
-    //let tag = opzioneSelezionata.getAttribute("tag")
-
+    // alternativa:
+    /*
+     let idTag = opzioneSelezionata.getAttribute("idTag");
+     let tipo = opzioneSelezionata.getAttribute("tipo");
+     let tag = opzioneSelezionata.getAttribute("tag");
+     */
     document.querySelector("#tag").value = tag;
     document.querySelector("#tipo").value = tipo;
     console.log(idTag, tipo, tag);
 };
-
-//}
-
 
 document.querySelector("#b_modTag").onclick = function () {
     console.log("click su modifica tag");
@@ -110,12 +94,9 @@ document.querySelector("#b_modTag").onclick = function () {
     }).then(function (response) {
         console.log("response:", response);
         console.log("response.text():", response.text());
-        
+
         caricaTag();
         caricaSelect();
-        return;
+        return ;
     }).catch(res => console.error("ERRORE:", res));
-
-
 };
-

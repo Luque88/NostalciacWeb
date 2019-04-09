@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="cssNostalciac.css" rel="stylesheet" type="text/css"/>
-        <link href="form.css" rel="stylesheet" type="text/css"/>
-        <script src="libreria.js" type="text/javascript"></script>
+        <link href="css/cssNostalciac.css" rel="stylesheet" type="text/css"/>
+        <link href="css/form.css" rel="stylesheet" type="text/css"/>
+        <script src="js/libreria.js" type="text/javascript"></script>
         <title>NOSTALCIAC</title>
     </head>
     <body>
@@ -24,7 +24,7 @@
         <hr>
         <div id="risultato"></div>
  
-        
+         <script src="js/jsNostalciac.js" type="text/javascript"></script>
     </body>
-    <script src="jsNostalciac.js" type="text/javascript"></script>
+   
 </html>
